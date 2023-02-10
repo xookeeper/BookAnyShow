@@ -1,17 +1,16 @@
 package com.bookanyshow.controller;
 
+import com.bookanyshow.dtos.CreateMovieDTO;
 import com.bookanyshow.model.Movie;
-import com.bookanyshow.service.MovieService;
+import com.bookanyshow.service.movieservice.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
-public class movieController {
+public class MovieController {
     @Autowired
     MovieService movieService;
 
@@ -22,6 +21,11 @@ public class movieController {
 
     @RequestMapping(value = "/movie", method = RequestMethod.GET)
     public Movie getMovie(@RequestParam(value = "movieName", required = true) String movieName){
-        return movieService.searchMovieByName(movieName);
+        return movieService.findMovieByName(movieName);
+    }
+
+    @RequestMapping(value = "/movie", method = RequestMethod.POST)
+    public Movie addMovie(@RequestBody CreateMovieDTO movieRequest){
+        return movieService.addMovie(movieRequest);
     }
 }

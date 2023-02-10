@@ -1,23 +1,24 @@
 package com.bookanyshow.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Table;
-import lombok.Data;
-import org.springframework.data.annotation.Id;
+import jakarta.persistence.*;
+import lombok.*;
+import org.springframework.context.annotation.Bean;
 
 import java.util.Date;
 
 @Data
 @Entity
-@Table(name = "MOVIES")
-public class Movie implements Event{
+@Table
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+public class Movie {
+
+    @GeneratedValue
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int id;
+    Long id;
     String name;
-    Date releaseDate;
+    Long releaseDate;
     String catagory;
-    String language;
+    String movieLanguage;
 }
