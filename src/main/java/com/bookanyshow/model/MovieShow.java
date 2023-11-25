@@ -8,6 +8,10 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.data.annotation.CreatedDate;
+
+import java.time.ZonedDateTime;
 
 @Data
 @Builder
@@ -22,4 +26,19 @@ public class MovieShow implements Event{
     Long movieId;
     Long showTime;
     Long screenId;
+    ShowStatus showStatus;
+
+    @CreatedDate
+    ZonedDateTime createdAt;
+
+    @UpdateTimestamp
+    ZonedDateTime updatedAt;
+    ZonedDateTime startTime;
+
+    public enum ShowStatus{
+        RUNNING,
+        CANCELLED,
+        SCHEDULED,
+        COMPLETED
+    }
 }

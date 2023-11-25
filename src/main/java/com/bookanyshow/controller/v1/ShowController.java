@@ -7,19 +7,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+@RestController
+@RequestMapping("/v1/shows")
 public class ShowController {
 
     @Autowired
     ShowService showService;
 
-    @RequestMapping(value = "/show", method = RequestMethod.GET)
+    @RequestMapping(value = "", method = RequestMethod.GET)
     public List<MovieShow> getShows(@RequestParam(value = "movieID", required = false) Long movieId){
         return showService.getShows(movieId);
     }
-    @RequestMapping(value = "/show", method = RequestMethod.POST)
+    @RequestMapping(value = "", method = RequestMethod.POST)
     public MovieShow addShow(CreateShowDTO showRequest){
         return showService.addShow(showRequest);
     }

@@ -35,7 +35,9 @@ public class ScreenService {
     }
 
     public Screen addScree(CreateScreenDTO screenRequest){
-        Screen screen = Screen.builder().name(screenRequest.getName()).theatreId(screenRequest.getTheaterId()).build();
+        Screen screen = Screen.builder().name(screenRequest.getName())
+                                        .theatreId(screenRequest.getTheaterId())
+                                        .build();
         screenRepository.save(screen);
         return screen;
     }
