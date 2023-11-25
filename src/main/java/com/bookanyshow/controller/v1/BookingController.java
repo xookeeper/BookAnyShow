@@ -1,4 +1,4 @@
-package com.bookanyshow.controller;
+package com.bookanyshow.controller.v1;
 
 public class BookingController {
 

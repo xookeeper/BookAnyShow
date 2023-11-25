@@ -1,4 +1,4 @@
-package com.bookanyshow.controller;
+package com.bookanyshow.controller.v1;
 
 import com.bookanyshow.dtos.CreateTheatreDTO;
 import com.bookanyshow.model.Theatre;
@@ -19,8 +19,6 @@ public class TheaterController {
     public List<Theatre> getTheatres(@RequestParam(value = "movieId", required = true) Long movieId){
         return theatreService.getTheatres(movieId);
     }
-
-
 
     @RequestMapping(value = "/theatres", method = RequestMethod.POST)
     public Theatre addTheatre(@RequestBody CreateTheatreDTO theatreRequest){
