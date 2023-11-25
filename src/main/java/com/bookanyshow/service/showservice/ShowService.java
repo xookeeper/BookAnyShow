@@ -21,7 +21,6 @@ public class ShowService {
 
     public MovieShow addShow(CreateShowDTO showRequest){
         MovieShow movieShow = MovieShow.builder().movieId(showRequest.getMovieId())
-                                                 .showTime(showRequest.getTime())
                                                  .screenId(showRequest.getScreenId())
                                                  .showStatus(MovieShow.ShowStatus.SCHEDULED)
                                                  .startTime(showRequest.getStartTime())

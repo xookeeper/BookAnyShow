@@ -46,7 +46,10 @@ public class TheatreService {
     }
 
     public Theatre addTheatre(CreateTheatreDTO theatreRequest){
-        Theatre theatre = Theatre.builder().name(theatreRequest.getName()).city(theatreRequest.getCity()).build();
+        Theatre theatre = Theatre.builder().name(theatreRequest.getName())
+                                           .city(theatreRequest.getCity())
+                                           .address(theatreRequest.getAddress())
+                                           .build();
         theatreRepository.save(theatre);
         return theatre;
     }

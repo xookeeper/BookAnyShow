@@ -10,17 +10,18 @@ import java.util.List;
 
 
 @RestController
+@RequestMapping("/v1/theatres")
 public class TheaterController {
 
     @Autowired
     TheatreService theatreService;
 
-    @RequestMapping(value = "/theatres", method = RequestMethod.GET)
+    @RequestMapping(value = "", method = RequestMethod.GET)
     public List<Theatre> getTheatres(@RequestParam(value = "movieId", required = true) Long movieId){
         return theatreService.getTheatres(movieId);
     }
 
-    @RequestMapping(value = "/theatres", method = RequestMethod.POST)
+    @RequestMapping(value = "", method = RequestMethod.POST)
     public Theatre addTheatre(@RequestBody CreateTheatreDTO theatreRequest){
         return theatreService.addTheatre(theatreRequest);
     }

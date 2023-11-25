@@ -10,5 +10,9 @@ public class CreateTheatreDTO {
     String name;
 
     @NonNull
+    String cityId;
+
+    String address;
+
     String city;
 }

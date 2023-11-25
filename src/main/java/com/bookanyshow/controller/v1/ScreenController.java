@@ -18,7 +18,7 @@ public class ScreenController {
 
     @RequestMapping(value = "", method = RequestMethod.POST)
     public Screen addScreen(@RequestBody CreateScreenDTO screenDTO){
-        return screenService.addScree(screenDTO);
+        return screenService.addScreen(screenDTO);
     }
 
 }

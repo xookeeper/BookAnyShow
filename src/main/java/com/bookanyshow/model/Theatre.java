@@ -21,6 +21,7 @@ public class Theatre {
     int id;
     String name;
     String city;
+    String address;
 
     @OneToMany
     List<Screen> screens;

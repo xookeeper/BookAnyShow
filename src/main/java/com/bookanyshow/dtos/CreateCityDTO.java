@@ -1,13 +1,10 @@
 package com.bookanyshow.dtos;
 
+import lombok.Data;
+
+@Data
 public class CreateCityDTO {
     String name;
     String state;
-
-    public CreateCityDTO(String name, String state) {
-        this.name = name;
-        this.state = state;
-    }
-
-
+    String country;
 }

@@ -5,7 +5,6 @@ import com.bookanyshow.model.MovieShow;
 import com.bookanyshow.model.Screen;
 import com.bookanyshow.repository.ScreenRepository;
 import com.bookanyshow.repository.ShowRepository;
-import com.bookanyshow.service.showservice.ShowService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,7 +33,7 @@ public class ScreenService {
         return screens;
     }
 
-    public Screen addScree(CreateScreenDTO screenRequest){
+    public Screen addScreen(CreateScreenDTO screenRequest){
         Screen screen = Screen.builder().name(screenRequest.getName())
                                         .theatreId(screenRequest.getTheaterId())
                                         .build();
